@@ -1,0 +1,293 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For You ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-family: "Georgia", serif;
+
+      background: linear-gradient(
+        135deg,
+        #ffb6c9,
+        #ff8fab,
+        #ffc1d6
+      );
+
+      position: relative;
+    }
+
+    /* Main Card */
+    .card {
+      width: 85%;
+      max-width: 700px;
+
+      padding: 50px 35px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(10px);
+
+      border-radius: 30px;
+
+      border: 2px solid rgba(255, 255, 255, 0.5);
+
+      box-shadow:
+        0 20px 50px rgba(150, 0, 50, 0.25);
+
+      z-index: 10;
+
+      animation: appear 2s ease;
+    }
+
+    h1 {
+      color: #8b001f;
+      font-size: 42px;
+      margin-bottom: 25px;
+
+      text-shadow:
+        0 3px 10px rgba(255, 255, 255, 0.7);
+
+      animation: glow 2s infinite alternate;
+    }
+
+    p {
+      color: #650019;
+      font-size: 22px;
+      line-height: 1.7;
+    }
+
+    .heart {
+      font-size: 45px;
+      margin-top: 25px;
+
+      animation: heartbeat 1.3s infinite;
+    }
+
+    /* Roses */
+    .rose {
+      position: absolute;
+      font-size: 55px;
+
+      animation: floatRose 6s ease-in-out infinite;
+
+      z-index: 2;
+    }
+
+    .rose:nth-child(1) {
+      left: 5%;
+      top: 10%;
+      animation-delay: 0s;
+    }
+
+    .rose:nth-child(2) {
+      right: 7%;
+      top: 15%;
+      animation-delay: 1s;
+    }
+
+    .rose:nth-child(3) {
+      left: 10%;
+      bottom: 12%;
+      animation-delay: 2s;
+    }
+
+    .rose:nth-child(4) {
+      right: 10%;
+      bottom: 10%;
+      animation-delay: 3s;
+    }
+
+    .rose:nth-child(5) {
+      left: 45%;
+      top: 5%;
+      font-size: 40px;
+      animation-delay: 1.5s;
+    }
+
+    /* Falling Hearts */
+    .falling-heart {
+      position: absolute;
+      top: -50px;
+
+      color: #d60036;
+      font-size: 20px;
+
+      animation: fall linear infinite;
+
+      opacity: 0.8;
+    }
+
+    .falling-heart:nth-of-type(6) {
+      left: 10%;
+      animation-duration: 7s;
+    }
+
+    .falling-heart:nth-of-type(7) {
+      left: 25%;
+      animation-duration: 9s;
+      animation-delay: 2s;
+    }
+
+    .falling-heart:nth-of-type(8) {
+      left: 40%;
+      animation-duration: 6s;
+      animation-delay: 1s;
+    }
+
+    .falling-heart:nth-of-type(9) {
+      left: 60%;
+      animation-duration: 8s;
+      animation-delay: 3s;
+    }
+
+    .falling-heart:nth-of-type(10) {
+      left: 75%;
+      animation-duration: 7s;
+      animation-delay: 1.5s;
+    }
+
+    .falling-heart:nth-of-type(11) {
+      left: 90%;
+      animation-duration: 10s;
+      animation-delay: 2s;
+    }
+
+    /* Animations */
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.04);
+      }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+    @keyframes floatRose {
+      0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(5deg);
+      }
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+
+      .card {
+        padding: 35px 22px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .rose {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Red Roses -->
+  <div class="rose">🌹</div>
+  <div class="rose">🌹</div>
+  <div class="rose">🌹</div>
+  <div class="rose">🌹</div>
+  <div class="rose">🌹</div>
+
+  <!-- Falling Hearts -->
+  <div class="falling-heart">❤️</div>
+  <div class="falling-heart">♥️</div>
+  <div class="falling-heart">❤️</div>
+  <div class="falling-heart">♥️</div>
+  <div class="falling-heart">❤️</div>
+  <div class="falling-heart">♥️</div>
+
+  <!-- Your Message -->
+  <div class="card">
+
+    <h1>To My Favorite Person ❤️</h1>
+
+    <p>
+      Write whatever you want here...
+      <br>
+      This little website is just for you 🌹
+    </p>
+
+    <div class="heart">❤️</div>
+
+  </div>
+
+</body>
+</html>
+```
